@@ -12,7 +12,7 @@ build:
 deploy:
   script:
     - cd output;nohup python -m pelican.server &
-    - cd pelican content -o output -s pelicanconf.py
+    - pelican content -o output -s pelicanconf.py
   stage: deploy
   tags:
     - ci

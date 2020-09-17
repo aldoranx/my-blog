@@ -30,7 +30,12 @@ deploy website:
     - lftp $FTP_SERVER -u $FTP_USER,$FTP_PASS -e mirror -R output/ / ; quit
 
   stage: deploy
+  tags:
+    - ci
+    - shell
+    - ssh
 stages: 
   - build
   - deploy
-
+  - build website
+  - deploy website

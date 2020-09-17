@@ -2,29 +2,6 @@
 branches: 
   only: 
     - master
-build: 
-  script: 
-    - "rm -rf output"
-    - "pelican content"
-    - "pelican content -o output -s pelicanconf.py"
-  stage: build
-  tags: 
-    - ci
-    - shell
-    - ssh
-deploy: 
-  script: 
-    - "cd pelican"
-    - "pelican content -o output -s pelicanconf.py"
-    - "ghp-import output"
-    - "git push origin gh-pages"
-    - "cd output;nohup python -m pelican.server &"
-  stage: deploy
-  tags: 
-    - ci
-    - shell
-    - ssh
-  when: manual
 install: 
   - "pip install pelican ghp-import"
 language: python
@@ -33,8 +10,8 @@ script:
   - "pelican content -o output -s pelicanconf.py"
   - "ghp-import output"
   - "git push origin gh-pages"
-stages: 
-  - build
-  - install
-  - deploy
+tags: 
+  - ci
+  - shell
+  - ssh
 

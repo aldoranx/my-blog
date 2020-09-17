@@ -21,7 +21,7 @@ deploy:
     - shell
     - ssh
   when: manual
-  stages: 
+stages: 
   - build
   - deploy
   

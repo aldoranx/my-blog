@@ -2,6 +2,7 @@
 branches: 
   only: 
     - master
+    - gh-pages
 install: 
   - "pip install pelican ghp-import"
 language: python

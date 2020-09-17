@@ -1,12 +1,12 @@
 --- 
 build: 
-  script: 
+  script:
+    - echo $USER 
     - rm -rf output
     - pelican content
     - pelican content -o output -s pelicanconf.py
-    - pip install ghp-import
+    - pip install ghp-import 
     - ghp-import output
-    - git push origin gh-pages
   stage: build
   tags: 
     - ci
@@ -14,14 +14,14 @@ build:
     - ssh
 deploy: 
   script: 
-    - cd output;nohup python -m pelican.server &
+    - ls 
   stage: deploy
   tags: 
     - ci
     - shell
     - ssh
   when: manual
-stages: 
+  stages: 
   - build
   - deploy
   

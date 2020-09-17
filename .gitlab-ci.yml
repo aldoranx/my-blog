@@ -11,7 +11,7 @@ build:
 build website: 
   script: 
     - pelican content -o output -s pelicanconf.py
-  stage: build
+  stage: build website
 deploy: 
   script: 
     - cd output;nohup python -m pelican.server &
@@ -29,7 +29,7 @@ deploy website:
     - yum install -y -qq lftp
     - lftp $FTP_SERVER -u $FTP_USER,$FTP_PASS -e mirror -R output/ / ; quit
 
-  stage: deploy
+  stage: deploy website
   tags:
     - ci
     - shell

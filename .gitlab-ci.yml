@@ -8,15 +8,29 @@ build:
     - ci
     - shell
     - ssh
-deploy:
-  script:
+build website: 
+  script: 
+    - pelican content -o output -s pelicanconf.py
+  stage: build
+deploy: 
+  script: 
     - cd output;nohup python -m pelican.server &
   stage: deploy
-  tags:
+  tags: 
     - ci
     - shell
     - ssh
   when: manual
+deploy website: 
+  only: 
+    - gh-pages
+  script: 
+    - pelican content -o output -s publishconf.py
+    - yum install -y -qq lftp
+    - lftp $FTP_SERVER -u $FTP_USER,$FTP_PASS -e mirror -R output/ / ; quit
+
+  stage: deploy
 stages: 
   - build
   - deploy
+

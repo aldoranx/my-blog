@@ -14,7 +14,7 @@ build:
     - ssh
 deploy: 
   script: 
-    - ls 
+    - ls -a 
   stage: deploy
   tags: 
     - ci

@@ -16,7 +16,6 @@ deploy:
     - echo "$GITHUB_RSA_PRIVATE"
   script: 
     - git remote set-url origin https://github.com/aldoranx/my-blog.git
-    - git checkout gh-pages
     - pelican content -o output -s pelicanconf.py
     - ghp-import output
     - git add --all

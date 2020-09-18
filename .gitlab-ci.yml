@@ -12,11 +12,12 @@ build:
     - ci
     - shell
     - ssh
-deploy: 
+deploy:
+  before_script:
+    - echo "$GITHUB_RSA_PRIVATE" | tr -d '\r' > ~/.ssh/id_rsa 
   script: 
     - ls -a
-    - git remote add origin git@github.com:aldoranx/my-blog.git
-    - git checkout gh-pages 
+      
   stage: deploy
   tags: 
     - ci

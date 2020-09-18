@@ -17,7 +17,8 @@ deploy:
     - echo "$GITHUB_RSA_PRIVATE"
   script: 
     - ls -a
-    - git remote add https://github.com/aldoranx/my-blog.git
+    - git remote add origin https://github.com/aldoranx/my-blog.git
+    - git checkout gh-pages
       
   stage: deploy
   tags: 

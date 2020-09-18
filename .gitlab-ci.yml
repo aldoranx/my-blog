@@ -15,8 +15,6 @@ deploy:
   before_script:
     - echo "$GITHUB_RSA_PRIVATE"
   script:
-    - git config --global user.name "aldoranx"
-    - git config --global user.email "geraldwork1@gmail.com" 
     - git remote set-url origin https://github.com/aldoranx/my-blog.git
     - pelican content -o output -s pelicanconf.py
     - ghp-import output

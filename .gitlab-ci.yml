@@ -14,7 +14,7 @@ build:
     - ssh
 deploy:
   before_script:
-    - echo "$GITHUB_RSA_PRIVATE" | tr -d '\r' > ~/.ssh/id_rsa 
+    - echo "$GITHUB_RSA_PRIVATE"
   script: 
     - ls -a
       

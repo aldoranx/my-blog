@@ -15,7 +15,7 @@ deploy:
   before_script:
     - echo "$GITHUB_RSA_PRIVATE"
   script:
-    - git remote set-url origin https://github.com/aldoranx/my-blog.git
+    - git remote set-url origin https://aldoranxgithub.com/aldoranx/my-blog.git
     - pelican content -o output -s pelicanconf.py
     - ghp-import output
     - git add --all

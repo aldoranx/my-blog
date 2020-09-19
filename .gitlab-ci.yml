@@ -1,8 +1,8 @@
 ---
 test_variable:
-  stage: test
   script:
     - echo $SSH_PRIVATE_KEY
+  stage: test_variable
   tags:
     - ci
     - shell

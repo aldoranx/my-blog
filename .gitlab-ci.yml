@@ -26,7 +26,7 @@ stages:
   - deploy
 test_variable: 
   script: 
-    - "echo $CI_JOB_STAGE"
+    - "echo $USER_GITHUB"
   stage: test_variable
   tags: 
     - ci

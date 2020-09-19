@@ -22,7 +22,7 @@ build:
 deploy:
   script:
     - echo "hello ranx"
-      
+m here      
   stage: deploy
   tags: 
     - ci

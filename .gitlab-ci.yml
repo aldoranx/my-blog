@@ -2,7 +2,6 @@
 test_variable:
   script:
     - echo $CI_JOB_STAGE
-
   stage: test_variable
   tags:
     - ci

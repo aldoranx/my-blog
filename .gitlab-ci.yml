@@ -21,8 +21,7 @@ build:
     - ssh
 deploy:
   script:
-    - echo "hello ranx jhheez"
-m here      
+    - echo hello ranx     
   stage: deploy
   tags: 
     - ci

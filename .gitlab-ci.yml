@@ -1,35 +1,34 @@
----
-test_variable:
-  script:
-    - echo $CI_JOB_STAGE
-  stage: test
-  tags:
-    - ci
-    - shell
-    - ssh
+--- 
 build: 
-  script:
-    - rm -rf output
-    - pelican content
-    - pelican content -o output -s pelicanconf.py
-    - pip install ghp-import 
-    - ghp-import output
+  script: 
+    - "rm -rf output"
+    - "pelican content"
+    - "pelican content -o output -s pelicanconf.py"
+    - "pip install ghp-import"
+    - "ghp-import output"
   stage: build
   tags: 
     - ci
     - shell
     - ssh
-deploy:
-  script:
-    - echo hello world     
+deploy: 
+  script: 
+    - "echo hello world"
   stage: deploy
   tags: 
     - ci
     - shell
     - ssh
   when: manual
-stages:
-  - test_variable 
+stages: 
+  - test_variable
   - build
   - deploy
-  
+test_variable: 
+  script: 
+    - "echo $CI_JOB_STAGE"
+  stage: test_variable
+  tags: 
+    - ci
+    - shell
+    - ssh

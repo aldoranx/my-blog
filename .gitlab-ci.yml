@@ -3,6 +3,10 @@ test_variable:
   stage: test
   script:
     - echo $SSH_PRIVATE_KEY
+   tags:
+    - ci
+    - shell
+    - ssh
 build: 
   script:
     - rm -rf output
@@ -25,7 +29,8 @@ deploy:
     - shell
     - ssh
   when: manual
-stages: 
+stages:
+  - test_variable 
   - build
   - deploy
   

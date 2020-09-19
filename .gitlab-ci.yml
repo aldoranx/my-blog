@@ -13,8 +13,8 @@ build:
     - ssh
 deploy: 
   script: 
-    - "echo hello ranx"
- stage: deploy
+    - "echo hello world"
+  stage: deploy
   tags: 
     - ci
     - shell
@@ -32,3 +32,4 @@ test_variable:
     - ci
     - shell
     - ssh
+

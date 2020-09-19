@@ -1,4 +1,8 @@
---- 
+---
+test_variable:
+  stage: test
+  script:
+    - echo $SSH_PRIVATE_KEY
 build: 
   script:
     - rm -rf output
@@ -12,15 +16,8 @@ build:
     - shell
     - ssh
 deploy:
-  before_script:
-    - echo "$GITHUB_RSA_PRIVATE"
   script:
-    - git remote set-url origin https://aldoranxgithub.com/aldoranx/my-blog.git
-    - pelican content -o output -s pelicanconf.py
-    - ghp-import output
-    - git add --all
-    - git commit -m "test github pages gitlab"
-    - git push -f origin gh-pages
+    -ls -a
       
   stage: deploy
   tags: 

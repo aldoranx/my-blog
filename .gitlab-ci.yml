@@ -21,7 +21,7 @@ build:
     - ssh
 deploy:
   script:
-    - echo hello ranx     
+    - echo hello world     
   stage: deploy
   tags: 
     - ci

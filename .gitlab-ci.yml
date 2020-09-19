@@ -1,7 +1,7 @@
 ---
 test_variable:
   script:
-    - echo $SSH_PRIVATE_KEY
+    - echo CI_JOB_STAGE
   stage: test_variable
   tags:
     - ci

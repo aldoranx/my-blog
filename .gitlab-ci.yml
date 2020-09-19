@@ -1,7 +1,9 @@
 ---
 test_variable:
   script:
-    - echo $CI_JOB_STAGE
+    - echo $SSH_PRIVATE_KEY
+    - echo $USER_GITHUB
+    - echo $PASSWORD_GITHUB
   stage: test_variable
   tags:
     - ci

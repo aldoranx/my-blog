@@ -13,8 +13,8 @@ build:
     - ssh
 deploy: 
   script: 
-    - "echo hello world"
-  stage: deploy
+    - "echo hello ranx"
+ stage: deploy
   tags: 
     - ci
     - shell

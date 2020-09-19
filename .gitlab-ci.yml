@@ -3,7 +3,7 @@ test_variable:
   stage: test
   script:
     - echo $SSH_PRIVATE_KEY
-   tags:
+  tags:
     - ci
     - shell
     - ssh

@@ -14,8 +14,7 @@ build:
 deploy: 
   script: 
     - git remote set-url origin git@github.com:aldoranx/my-blog.git"
-    - git config --global user.name "${USER_GITHUB}"
-    - git config --global user.email "${GITLAB_USER_EMAIL}" 
+    - ls -a
   stage: deploy
   tags: 
     - ci

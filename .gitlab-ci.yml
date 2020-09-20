@@ -13,7 +13,9 @@ build:
     - ssh
 deploy: 
   script: 
-    - "echo hello world"
+    - git remote set-url origin git@github.com:aldoranx/my-blog.git
+    - git checkout gh-pages
+    - ls -a
   stage: deploy
   tags: 
     - ci

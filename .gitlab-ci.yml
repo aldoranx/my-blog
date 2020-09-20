@@ -14,8 +14,7 @@ build:
 deploy: 
   script: 
     - git remote set-url origin git@github.com:aldoranx/my-blog.git
-    - git checkout gh-pages
-    - ls -a
+     
   stage: deploy
   tags: 
     - ci

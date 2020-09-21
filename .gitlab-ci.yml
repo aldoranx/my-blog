@@ -1,4 +1,4 @@
---- 
+---
 build: 
   script: 
     - "rm -rf output"
@@ -18,8 +18,11 @@ deploy:
     - git config --global user.name "${USER_GITHUB}"
     - git config --global user.email "${GITLAB_USER_EMAIL}"
     - "git add ."
-    - "git commit -m \"test 02\""
-    - "git push http://$USER_GITHUB:$PASSWORD_GITHUBgithub.com:aldoranx/my-blog.git"       
+    - "git commit -m "test zer"
+    - "git push http://$USER_GITHUB:$PASSWORD_GITHUBgithub.com:aldoranx/my-blog.git"HEAD:master
+    - "pelican content -o output -s pelicanconf.py"
+    - "pip install ghp-import"
+    - "ghp-import output"
   stage: deploy
   tags: 
     - ci

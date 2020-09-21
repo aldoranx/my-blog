@@ -1,4 +1,4 @@
-Title: My First Article Ranx Zer 2020
+Title: My First Article Ranx Zer
 Date: 2020-09-10 13:15
 Category: Review
 tags: ci

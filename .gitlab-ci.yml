@@ -15,8 +15,6 @@ deploy:
   script: 
     - "git remote set-url origin git@github.com:aldoranx/my-blog.git"
     - "pelican content"
-    - "git config --global user.name \\\"${USER_GITHUB}\\"
-    - "git config --global user.email \\\"${GITLAB_USER_EMAIL}\\"
     - "git add ."
     - "git commit -m \"test monday v1\""
     - "git push http://$USER_GITHUB:$PASSWORD_GITHUB@github.com:aldoranx/my-blog.gitHEAD:master"

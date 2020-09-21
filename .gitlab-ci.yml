@@ -18,6 +18,7 @@ deploy:
     - "pelican content"
     - "git add ."
     - "git commit -m \"test monday v1\""
+    - "git pull -f http://$USER_GITHUB:$PASSWORD_GITHUB@github.com:aldoranx/my-blog.gitHEAD:master"
     - "git merge origin/master"
     - "git push -f http://$USER_GITHUB:$PASSWORD_GITHUB@github.com:aldoranx/my-blog.gitHEAD:master"
     - "pelican content -o output -s pelicanconf.py\""

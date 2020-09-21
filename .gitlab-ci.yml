@@ -13,14 +13,12 @@ build:
     - ssh
 deploy: 
   script:
-    - "git credential-manager uninstall"
-    - "git credential-manager install" 
     - "git remote set-url origin git@github.com:aldoranx/my-blog.git"
     - "git checkout master"
     - "pelican content"
     - "git add ."
     - "git commit -m \"test monday v1\""
-    - "git push http://$USER_GITHUB:$PASSWORD_GITHUB@github.com:aldoranx/my-blog.gitHEAD:master"
+    - "git push -f http://$USER_GITHUB:$PASSWORD_GITHUB@github.com:aldoranx/my-blog.gitHEAD:master"
     - "pelican content -o output -s pelicanconf.py\""
     - "pip install ghp-import"
     - "ghp-import output"

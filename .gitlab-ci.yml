@@ -14,7 +14,6 @@ build:
 deploy: 
   script: 
     - "git remote set-url origin git@github.com:aldoranx/my-blog.git"
-    - "git checkout master"
     - "pelican content"
     - "git add ."
     - "git commit -m \"test monday v1\""

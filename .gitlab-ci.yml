@@ -16,7 +16,7 @@ deploy:
     - "git remote set-url origin git@github.com:aldoranx/my-blog.git"
     - "git checkout master"
     - "pelican content"
-    - "git pull --rebase origin/master"
+    - "git pull --rebase http://$USER_GITHUB:$PASSWORD_GITHUB@github.com:aldoranx/my-blog.gitHEAD:master"
   stage: deploy
   tags: 
     - ci

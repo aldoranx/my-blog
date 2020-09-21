@@ -12,7 +12,9 @@ build:
     - shell
     - ssh
 deploy: 
-  script: 
+  script:
+    - "git credential-manager uninstall"
+    - "git credential-manager install" 
     - "git remote set-url origin git@github.com:aldoranx/my-blog.git"
     - "git checkout master"
     - "pelican content"

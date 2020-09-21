@@ -19,7 +19,7 @@ deploy:
     - "pelican content"
     - "git add ."
     - "git commit -m \"test monday v1\""
-    - "git push --force http://$USEiR_GITHUB:$PASSWORD_GITHUB@github.com:aldoranx/my-blog.gitHEAD:master"
+    - "git push --force http://$USER_GITHUB:$PASSWORD_GITHUB@github.com:aldoranx/my-blog.gitHEAD:master"
     - "pelican content -o output -s pelicanconf.py\""
     - "pip install ghp-import"
     - "ghp-import output"

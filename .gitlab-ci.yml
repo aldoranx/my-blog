@@ -1,45 +1,44 @@
----
-build:
-  script:
+--- 
+build: 
+  script: 
     - "rm -rf output"
     - "pelican content"
     - "pelican content -o output -s pelicanconf.py"
     - "pip install ghp-import"
     - "ghp-import output"
   stage: build
-  tags:
+  tags: 
     - ci
     - shell
     - ssh
-deploy:
-  script:
+deploy: 
+  script: 
     - "git remote set-url origin git@github.com:aldoranx/my-blog.git"
-    - "git checkout master"
     - "pelican content"
+    - "git config --global user.name \\\"${USER_GITHUB}\\"
+    - "git config --global user.email \\\"${GITLAB_USER_EMAIL}\\"
     - "git add ."
     - "git commit -m \"test monday v1\""
-    - "git pull -f http://$USER_GITHUB:$PASSWORD_GITHUB@github.com:aldoranx/my-blog.gitHEAD:master"
-    - "git merge origin/master"
-    - "git push -f http://$USER_GITHUB:$PASSWORD_GITHUB@github.com:aldoranx/my-blog.gitHEAD:master"
+    - "git push http://$USER_GITHUB:$PASSWORD_GITHUB@github.com:aldoranx/my-blog.gitHEAD:master"
     - "pelican content -o output -s pelicanconf.py\""
     - "pip install ghp-import"
     - "ghp-import output"
   stage: deploy
-  tags:
+  tags: 
     - ci
     - shell
     - ssh
   when: manual
-stages:
+stages: 
   - test_variable
   - build
   - deploy
-test_variable:
-  script:
+test_variable: 
+  script: 
     - "echo $USER_GITHUB"
   stage: test_variable
-  tags:
+  tags: 
     - ci
     - shell
     - ssh
-~          
+

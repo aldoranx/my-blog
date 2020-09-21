@@ -1,4 +1,4 @@
----
+--- 
 build: 
   script: 
     - "rm -rf output"
@@ -15,12 +15,12 @@ deploy:
   script: 
     - "git remote set-url origin git@github.com:aldoranx/my-blog.git"
     - "pelican content"
-    - git config --global user.name "${USER_GITHUB}"
-    - git config --global user.email "${GITLAB_USER_EMAIL}"
+    - "git config --global user.name \\\"${USER_GITHUB}\\"
+    - "git config --global user.email \\\"${GITLAB_USER_EMAIL}\\"
     - "git add ."
-    - "git commit -m "test zer"
-    - "git push http://$USER_GITHUB:$PASSWORD_GITHUBgithub.com:aldoranx/my-blog.git"HEAD:master
-    - "pelican content -o output -s pelicanconf.py"
+    - "git commit -m \"test monday v1\""
+    - "git push http://$USER_GITHUB:$PASSWORD_GITHUB@github.com:aldoranx/my-blog.gitHEAD:master"
+    - "pelican content -o output -s pelicanconf.py\""
     - "pip install ghp-import"
     - "ghp-import output"
   stage: deploy

@@ -1,4 +1,4 @@
-Title: My First Article  Zer
+Title: My First Zer
 Date: 2020-09-10 13:15
 Category: Review
 tags: ci

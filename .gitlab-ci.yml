@@ -18,6 +18,7 @@ deploy:
     - git config --global --list
     - git remote set-url origin git@github.com:aldoranx/my-blog.git
     - git checkout master
+    - git reset --hard 4fdb71d201b32111efa9c0349d69af9274ce6027
     - rm -rf output
     - pelican content
     - touch txt.txt

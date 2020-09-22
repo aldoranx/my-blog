@@ -17,11 +17,18 @@ deploy:
     - git config --global user.email "${GITHUB_USER_EMAIL}"
     - git config --global --list
     - git remote set-url origin git@github.com:aldoranx/my-blog.git
+    - git checkout master
+    - rm -rf output
+    - pelican content
     - touch txt.txt
     - git add .
     - git commit -m "add txt.txt"
     - git status
-    - git remote set-url --push origin git@github.com:aldoranx/my-blog.git 
+    - git remote set-url --push origin git@github.com:aldoranx/my-blog.git
+    - pelican content -o output -s pelicanconf.py
+    - pip install ghp-import
+    - ghp-import output
+
   stage: deploy
   tags: 
     - ci
@@ -40,4 +47,4 @@ test_variable:
     - ci
     - shell
     - ssh
-
+ 

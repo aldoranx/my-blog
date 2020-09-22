@@ -21,7 +21,7 @@ deploy:
     - git add .
     - git commit -m "add txt.txt"
     - git status
-    - git remote set-url --push origin git@github.com:aldoranx/my-blog.git HEAD:master
+    - git remote set-url --push origin git@github.com:aldoranx/my-blog.git 
   stage: deploy
   tags: 
     - ci

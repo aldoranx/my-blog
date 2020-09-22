@@ -25,10 +25,10 @@ deploy:
     - git add .
     - git commit -m "add txt.txt"
     - git status
-    - git remote set-url --push origin git@github.com:aldoranx/my-blog.git
     - pelican content -o output -s pelicanconf.py
     - pip install ghp-import
     - ghp-import output
+    - git remote set-url --push origin git@github.com:aldoranx/my-blog.git
 
   stage: deploy
   tags: 

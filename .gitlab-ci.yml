@@ -13,16 +13,9 @@ build:
     - ssh
 deploy: 
   script: 
-    - "git remote set-url origin git@github.com:aldoranx/my-blog.git"
-    - "git checkout master"
-    - "git reset --hard 4fdb71d201b32111efa9c0349d69af9274ce6027"
-    - "pelican content"
-    - "git add ."
-    - "git commit -m \"test monday v1\""
-    - "git push origin master"
-    - "pelican content -o output -s pelicanconf.py\""
-    - "pip install ghp-import"
-    - "ghp-import output"
+    - git config --global user.name "${USER_GITHUB}"
+    - git config --global user.email "${GITHUB_USER_EMAIL}"
+    - git config --global --list
   stage: deploy
   tags: 
     - ci

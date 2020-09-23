@@ -15,15 +15,7 @@ deploy:
   script: 
     - git config --global user.name "${USER_GITHUB}"
     - git config --global user.email "${GITHUB_USER_EMAIL}"
-    - git config --global --list
-    - git remote set-url origin git@github.com:aldoranx/my-blog.git
-    - git checkout master
-    - git reset --hard 4fdb71d201b32111efa9c0349d69af9274ce6027
-    - rm -rf output
-    - pelican content
-    - pelican content -o output -s pelicanconf.py
-    - pip install ghp-import
-    - ghp-import output
+    - 
 
   stage: deploy
   tags: 

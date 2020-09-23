@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = u'Gerald'
 SITENAME = u'My First Pelican Article'
 SITEURL = ''
-
+BIND = '192.168.121.84'
 PATH = 'content'
 
 TIMEZONE = 'Europe/Paris'

@@ -1,6 +1,7 @@
 --- 
 build: 
-  script: 
+  script:
+    - "cd /root/virtualenvs/pelican" 
     - "rm -rf output"
     - "pelican content"
     - "pelican content -o output -s pelicanconf.py"
@@ -13,9 +14,10 @@ build:
     - ssh
 deploy: 
   script: 
-    - git config --global user.name "${USER_GITHUB}"
-    - git config --global user.email "${GITHUB_USER_EMAIL}"
-    - 
+  - cd /root/virtualenvs/pelican/output
+  - git add *
+  - git commit -m "Update of website"
+  - git push https://$GITHUB_USER:$GITHUB_TOKEN@github.com/$GITHUB_USER/$GITHUB_USER.github.io.git/my-blog HEAD:master 
 
   stage: deploy
   tags: 
@@ -29,7 +31,7 @@ stages:
   - deploy
 test_variable: 
   script: 
-    - "echo $USER_GITHUB"
+    - "echo $GITHUB_USER"
   stage: test_variable
   tags: 
     - ci

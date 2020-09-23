@@ -1,8 +1,8 @@
 --- 
 build: 
   script: 
+    - cd root/virtualenvs/pelican/
     - rm -rf output
-    - "pelican content"
     - "pelican content -o output -s pelicanconf.py"
     - "pip install ghp-import"
     - "ghp-import output"
@@ -13,7 +13,7 @@ build:
     - ssh
 deploy: 
   script: 
-  - cd root/virtualenvs/pelican/output
+  - cd /virtualenvs/pelican/output
   - git add *
   - git commit -m "Update of website"
   - git push https://$GITHUB_USER:$GITHUB_TOKEN@github.com/$GITHUB_USER/$GITHUB_USER.github.io.git/my-blog HEAD:master 

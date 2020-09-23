@@ -13,7 +13,8 @@ build:
     - ssh
 deploy: 
   script: 
-  - cd /root/virtualenvs/pelican/output
+  - git remote set-url origin git@github.com:aldoranx/my-blog.git
+  - sudo cd /root/virtualenvs/pelican/output
   - git add *
   - git commit -m "Update of website"
   - git push https://$GITHUB_USER:$GITHUB_TOKEN@github.com/$GITHUB_USER/$GITHUB_USER.github.io.git/my-blog HEAD:master 

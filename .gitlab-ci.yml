@@ -13,11 +13,7 @@ build:
 deploy: 
   script:
   - git remote set-url origin git@git@192.168.121.84:aldo92i/my-blog.git 
-  - cd /output
-  - git add *
-  - git commit -m "Update of website"
-  - git push https://$GITHUB_USER:$GITHUB_TOKEN@github.com/$GITHUB_USER/$GITHUB_USER.github.io.git/my-blog HEAD:master 
-
+  - ls -a
   stage: deploy
   tags: 
     - ci
@@ -28,9 +24,6 @@ stages:
   - test_variable
   - build
   - deploy
-test_variable: 
-  script: 
-    - "echo $GITHUB_USER"
   stage: test_variable
   tags: 
     - ci

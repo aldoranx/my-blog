@@ -5,7 +5,7 @@ build:
     - "pelican content"
     - "pelican content -o output -s pelicanconf.py"
     - "pip install ghp-import"
-    - "ghp-import output"
+    - ghp-import output
   stage: build
   tags: 
     - ci

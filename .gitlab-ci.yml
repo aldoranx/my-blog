@@ -1,8 +1,8 @@
 --- 
 build: 
   script: 
-    - rm -rf output
-    - pelican content -o output -s pelicanconf.py
+    - "rm -rf output"
+    - "pelican content -o output -s pelicanconf.py"
     - "pip install ghp-import"
     - "ghp-import output"
   stage: build
@@ -11,22 +11,16 @@ build:
     - shell
     - ssh
 deploy: 
-  script:
-  - git remote set-url origin git@git@192.168.121.84:aldo92i/my-blog.git 
-  - ls -a
+  script: 
+    - "git remote set-url origin git@git@192.168.121.84:aldo92i/my-blog.git"
+    - "ls -a"
   stage: deploy
   tags: 
     - ci
     - shell
     - ssh
   when: manual
-stages: 
-  - test_variable
+stage: 
   - build
   - deploy
-  stage: test_variable
-  tags: 
-    - ci
-    - shell
-    - ssh
- 
+

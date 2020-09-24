@@ -13,8 +13,6 @@ build:
     - ssh
 deploy: 
   script:
-    - cd /pelican/output
-    - git commit -m "Update of website"
     - git push https://$GITHUB_USER:$GITHUB_TOKEN@github.com/$GITHUB_USER/$GITHUB_USER.github.io.git/my-blog HEAD:master
   stage: deploy
   tags: 

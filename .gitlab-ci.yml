@@ -1,7 +1,6 @@
 --- 
 build: 
   script: 
-    - cd root/virtualenvs/pelican/
     - rm -rf output
     - pelican content -o output -s pelicanconf.py
     - "pip install ghp-import"

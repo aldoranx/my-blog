@@ -13,7 +13,7 @@ build:
     - ssh
 deploy: 
   script:
-    - git push https://$GITHUB_USER:$GITHUB_TOKEN@github.com/$GITHUB_USER/$GITHUB_USER.github.io/my-blog.git HEAD:master
+    - git push git@github.com:aldoranx/my-blog.git HEAD:master
   stage: deploy
   tags: 
     - ci

@@ -13,7 +13,7 @@ build:
     - ssh
 deploy: 
   script:
-    - git push --force https://$GITHUB_TOKEN@github.com/aldoranx/my-blog.git HEAD:master
+    - git push --force https://$GITHUB_TOKEN@github.com/aldoranx/my-blog.git HEAD:gh-pages
   stage: deploy
   tags: 
     - ci

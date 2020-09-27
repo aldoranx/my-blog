@@ -1,35 +1,33 @@
---- 
-cuild: 
-  script: 
-    - git clone --force https://$GITLAB_TOKEN@gitlab.com/192.168.121.84/aldo92i/my-blog.git
-    - ls -a
+---
+build:
+  script:
+    - rm -rf output
+    - pelican content -o output -s pelicanconf.py
+    - pip install ghp-import
+    - ghp-import output
   stage: build
-  tags: 
+  tags:
     - ci
     - shell
     - ssh
-deploy: 
+deploy:
   script:
-    - cd /virtualenvs/pelican/output
-    - git add *
-    - git commit -m "sunday 20th"
     - git push --force https://$GITHUB_TOKEN@github.com/aldoranx/my-blog.git HEAD:master
   stage: deploy
-  tags: 
+  tags:
     - ci
     - shell
     - ssh
   when: manual
-stages: 
+stages:
   - test_variable
   - build
   - deploy
-test_variable: 
-  script: 
+test_variable:
+  script:
     - "echo $GITHUB_USER"
   stage: test_variable
-  tags: 
+  tags:
     - ci
     - shell
     - ssh
-

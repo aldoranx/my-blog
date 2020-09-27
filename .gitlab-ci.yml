@@ -13,6 +13,9 @@ build:
 deploy:
   script:
     - ls -a
+    - cd output
+    - ls -a
+    - cd ..
     - git push --force https://$GITHUB_TOKEN@github.com/aldoranx/my-blog.git HEAD:master
   stage: deploy
   tags:

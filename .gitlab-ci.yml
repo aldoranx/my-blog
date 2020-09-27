@@ -1,8 +1,8 @@
 --- 
 build: 
   script: 
-    - cd /virtualenvs/pelican
-    - pelican content
+    - git clone git@192.168.121.84:aldo92i/my-blog.git
+    - ls -a
   stage: build
   tags: 
     - ci

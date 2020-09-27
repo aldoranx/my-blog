@@ -12,7 +12,9 @@ build:
     - ssh
 deploy: 
   script:
-    - git push --force https://$GITHUB_TOKEN@github.com/aldoranx/my-blog.git HEAD:gh-pages
+    - git add .
+    - git commit -m "sunday 20th"
+    - git push --force https://$GITHUB_TOKEN@github.com/aldoranx/my-blog.git HEAD:master
   stage: deploy
   tags: 
     - ci

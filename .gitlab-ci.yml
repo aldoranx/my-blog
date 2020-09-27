@@ -12,6 +12,7 @@ build:
     - ssh
 deploy:
   script:
+    - ls -a
     - git push --force https://$GITHUB_TOKEN@github.com/aldoranx/my-blog.git HEAD:master
   stage: deploy
   tags:

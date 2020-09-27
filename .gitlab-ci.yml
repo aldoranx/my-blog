@@ -1,7 +1,7 @@
 --- 
 build: 
   script: 
-    - git clone git@192.168.121.84:aldo92i/my-blog.git
+    - git clone https://$GITLAB_TOKEN@gitlab.com/192.168.121.84/aldo92i/my-blog.git
     - ls -a
   stage: build
   tags: 

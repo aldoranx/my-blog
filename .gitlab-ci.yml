@@ -11,9 +11,6 @@ deploy:
   script:
     - cd output
     - rm -rf output
-    - cd ..
-    - git add *
-    - git commit -m "Update of website"
     - git push --force https://$GITHUB_TOKEN@github.com/aldoranx/my-blog.git HEAD:master
   stage: deploy
   tags:

@@ -1,10 +1,7 @@
 ---
 build:
   script:
-    - rm -rf output
-    - pelican content -o output -s pelicanconf.py
-    - pip install ghp-import
-    - ghp-import output
+    - pelican content 
   stage: build
   tags:
     - ci
@@ -12,10 +9,11 @@ build:
     - ssh
 deploy:
   script:
-    - ls -a
     - cd output
-    - ls -a
+    - rm -rf output
     - cd ..
+    - git add *
+    - git commit -m "Update of website"
     - git push --force https://$GITHUB_TOKEN@github.com/aldoranx/my-blog.git HEAD:master
   stage: deploy
   tags:

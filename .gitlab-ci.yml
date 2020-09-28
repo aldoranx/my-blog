@@ -9,8 +9,6 @@ build:
     - ssh
 deploy:
   script:
-    - cd output
-    - rm -rf output
     - git push --force https://$GITHUB_TOKEN@github.com/aldoranx/my-blog.git HEAD:master
   stage: deploy
   tags:

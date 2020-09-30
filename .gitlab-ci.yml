@@ -1,8 +1,6 @@
 ---
 build:
   script:
-    - rm -rf output
-    - pelican content
     - pelican content -o output -s pelicanconf.py
     - pip install ghp-import
     - ghp-import output

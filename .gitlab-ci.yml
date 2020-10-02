@@ -11,8 +11,6 @@ build:
     - ssh
 deploy:
   script:
-    - git add --all
-    - git commit -m "update for github"
     - git push --force https://$GITHUB_TOKEN@github.com/aldoranx/my-blog.git HEAD:master
   stage: deploy
   tags:
